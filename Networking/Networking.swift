@@ -246,3 +246,11 @@ class HttpAuth: NSObject {
 enum Method: String {
   case OPTIONS, GET, HEAD, POST, PUT, PATCH, DELETE, TRACE, CONNECT
 }
+class KVPair: NSObject {
+  var key: String = "";
+  var value: String = ""
+  init(key: String, value: String){
+    self.key = key
+    self.value = value
+  }
+}
