@@ -8,7 +8,7 @@ import CocoaAsyncSocket
 enum NetworkingError: ErrorType {
   case InvalidUrl
 }
-class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
+public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
 //MARK: - HTTP Messages -
   var requestMessage: CFHTTPMessage?;
   var responseMessage: CFHTTPMessage?;
@@ -228,14 +228,14 @@ class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
     self.progressCB(progress: 100);
   }
 }
-enum Type: String {
+public enum Type: String {
   case JSON, XML,URLEncoded = "URL Encoded", PlainText = "Plain Text", HTML
 }
-enum FollowRedirect {
+public enum FollowRedirect {
   case All
   case Get
 }
-class HttpAuth: NSObject {
+public class HttpAuth: NSObject {
   var username: String = "";
   var password: String = "";
   init(username: String, password: String){
@@ -243,10 +243,10 @@ class HttpAuth: NSObject {
     self.password = password;
   }
 }
-enum Method: String {
+public enum Method: String {
   case OPTIONS, GET, HEAD, POST, PUT, PATCH, DELETE, TRACE, CONNECT
 }
-class KVPair: NSObject {
+public class KVPair: NSObject {
   var key: String = "";
   var value: String = ""
   init(key: String, value: String){

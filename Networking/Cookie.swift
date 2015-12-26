@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-class CookieJar: NSObject {
+public class CookieJar: NSObject {
   var cookies: Array<NSHTTPCookie> = [];
   var name: String;
   init(name: String){

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class Response : NSObject {
+public class Response : NSObject {
   /// The body. This is always a string, and then is convereted into different formats as needed.
   var body: String = "";
   var dataBody: NSMutableData = NSMutableData();
@@ -22,13 +22,13 @@ class Response : NSObject {
   }
   };
   var rawType: String = "" {
-  didSet{
-    if(oldValue != self.rawType){
-    if let _type = Type(rawValue: rawType) {
-      type = _type;
+    didSet{
+      if(oldValue != self.rawType){
+        if let _type = Type(rawValue: rawType) {
+          type = _type;
+        }
+      }
     }
-    }
-  }
   };
   var url: String = "";
   var size: Int = 0;

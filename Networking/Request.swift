@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class Request: NSObject{
+public class Request: NSObject{
   var method: Method = .GET {
     didSet {
       rawMethod = method.rawValue;
