@@ -10,6 +10,10 @@
 		FC24A2F81C2F18D6006BE8AC /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = FC24A2F71C2F18D6006BE8AC /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC24A2FF1C2F18D6006BE8AC /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC24A2F41C2F18D6006BE8AC /* Networking.framework */; };
 		FC24A3041C2F18D6006BE8AC /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24A3031C2F18D6006BE8AC /* NetworkingTests.swift */; };
+		FC24A3121C2F18EE006BE8AC /* Cookie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24A30E1C2F18EE006BE8AC /* Cookie.swift */; };
+		FC24A3131C2F18EE006BE8AC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24A30F1C2F18EE006BE8AC /* Networking.swift */; };
+		FC24A3141C2F18EE006BE8AC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24A3101C2F18EE006BE8AC /* Request.swift */; };
+		FC24A3151C2F18EE006BE8AC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24A3111C2F18EE006BE8AC /* Response.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		FC24A2FE1C2F18D6006BE8AC /* NetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC24A3031C2F18D6006BE8AC /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		FC24A3051C2F18D6006BE8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC24A30E1C2F18EE006BE8AC /* Cookie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cookie.swift; sourceTree = "<group>"; };
+		FC24A30F1C2F18EE006BE8AC /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		FC24A3101C2F18EE006BE8AC /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		FC24A3111C2F18EE006BE8AC /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,10 @@
 		FC24A2F61C2F18D6006BE8AC /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				FC24A30E1C2F18EE006BE8AC /* Cookie.swift */,
+				FC24A30F1C2F18EE006BE8AC /* Networking.swift */,
+				FC24A3101C2F18EE006BE8AC /* Request.swift */,
+				FC24A3111C2F18EE006BE8AC /* Response.swift */,
 				FC24A2F71C2F18D6006BE8AC /* Networking.h */,
 				FC24A2F91C2F18D6006BE8AC /* Info.plist */,
 			);
@@ -194,6 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC24A3151C2F18EE006BE8AC /* Response.swift in Sources */,
+				FC24A3121C2F18EE006BE8AC /* Cookie.swift in Sources */,
+				FC24A3141C2F18EE006BE8AC /* Request.swift in Sources */,
+				FC24A3131C2F18EE006BE8AC /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +321,7 @@
 		FC24A3091C2F18D6006BE8AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -317,12 +334,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.saschawise.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		FC24A30A1C2F18D6006BE8AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
