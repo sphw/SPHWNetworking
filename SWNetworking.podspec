@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "Networking"
+  s.name         = "SWNetworking"
   s.version      = "0.0.3"
   s.summary      = "A simple and easy to use networking library written in Swift"
 
