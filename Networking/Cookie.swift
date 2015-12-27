@@ -30,7 +30,6 @@ public class CookieJar: NSObject {
   }
   func toDict() -> NSMutableDictionary{
     var cookiesArray = [NSMutableDictionary]()
-    let dateFormatter = NSDateFormatter();
     for cookie in cookies {
       cookiesArray.append([
         NSHTTPCookieDomain: cookie.domain,

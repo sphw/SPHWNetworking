@@ -93,7 +93,7 @@ public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
     }
   }
 //MARK: - Socket Delegates -
-  func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16) {
+  public func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16) {
     NSLog("Connected to Host");
     if(self.url.scheme == "https"){
       self.socket!.startTLS(nil);
@@ -114,7 +114,7 @@ public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
 
     }
   }
-  func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
+  public func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
     if(data.bytes != nil){
       if let string = String(data: data, encoding: NSASCIIStringEncoding) {
         CFHTTPMessageAppendBytes(self.responseMessage!, UnsafePointer<UInt8>(data.bytes) , data.length);
@@ -160,7 +160,7 @@ public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
       }
     }
   }
-  func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
+  public func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
     NSLog("Disconnected");
     if(completed == false){
       self.responseGenerator();
