@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "SWNetworking"
-  s.version      = "0.0.5"
+  s.name         = "SPHWNetworking"
+  s.version      = "0.0.6"
   s.summary      = "A simple and easy to use networking library written in Swift"
 
   # This description is used to generate tags and improve search results.
@@ -25,10 +25,10 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-			Networking is a simple HTTP client that is written from scratch using CocoaAsyncSocket
+			SPHWNetworking is a simple HTTP client that is written from scratch using CocoaAsyncSocket
                    DESC
 
-  s.homepage     = "https://github.com/wisesascha/SWNetworking"
+  s.homepage     = "https://github.com/wisesascha/SPHWNetworking"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/wisesascha/Networking.git", :tag => "0.0.5" }
+  s.source       = { :git => "https://github.com/wisesascha/SPHWNetworking.git", :tag => "0.0.6" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
