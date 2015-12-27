@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SWNetworking"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "A simple and easy to use networking library written in Swift"
 
   # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 			Networking is a simple HTTP client that is written from scratch using CocoaAsyncSocket
                    DESC
 
-  s.homepage     = "https://github.com/wisesascha/Networking"
+  s.homepage     = "https://github.com/wisesascha/SWNetworking"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/wisesascha/Networking.git", :tag => "0.0.4" }
+  s.source       = { :git => "https://github.com/wisesascha/Networking.git", :tag => "0.0.5" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
