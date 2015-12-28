@@ -236,8 +236,8 @@ public enum FollowRedirect {
   case Get
 }
 public class HttpAuth: NSObject {
-  var username: String = "";
-  var password: String = "";
+  public var username: String = "";
+  public var password: String = "";
   public init(username: String, password: String){
     self.username = username;
     self.password = password;
@@ -247,8 +247,8 @@ public enum Method: String {
   case OPTIONS, GET, HEAD, POST, PUT, PATCH, DELETE, TRACE, CONNECT
 }
 public class KVPair: NSObject {
-  var key: String = "";
-  var value: String = ""
+  public var key: String = "";
+  public var value: String = ""
   public init(key: String, value: String){
     self.key = key
     self.value = value
