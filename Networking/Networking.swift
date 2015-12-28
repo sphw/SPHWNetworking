@@ -36,7 +36,7 @@ public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
       throw NetworkingError.InvalidUrl
     }
   }
-  func run(){
+  public func run(){
      responseMessage = CFHTTPMessageCreateEmpty(kCFAllocatorDefault, false).takeRetainedValue();
      requestMessage = CFHTTPMessageCreateRequest(kCFAllocatorDefault, request.rawMethod, CFURLCreateWithString(kCFAllocatorDefault, url.absoluteString, nil), kCFHTTPVersion1_1).takeRetainedValue();
     if(request.timeout != 0){

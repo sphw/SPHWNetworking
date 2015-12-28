@@ -8,12 +8,12 @@
 
 import Foundation
 public class Request: NSObject{
-  var method: Method = .GET {
+  public var method: Method = .GET {
     didSet {
       rawMethod = method.rawValue;
     }
   };
-  var rawMethod: String = "GET" {
+  public var rawMethod: String = "GET" {
     didSet{
       if(oldValue != self.rawMethod){
         if let _method = Method(rawValue: rawMethod) {
@@ -22,25 +22,11 @@ public class Request: NSObject{
       }
     }
   };
-  var url: String = "";
-  var httpAuth: HttpAuth = HttpAuth(username: "", password: "");
-   dynamic var headers: [KVPair] = [KVPair]();
-  var type: Type = Type.PlainText {
-    didSet {
-      rawType = type.rawValue;
-    }
-  }
-  var rawType: String = "Plain Text" {
-    didSet {
-      if(oldValue != self.rawType){
-        if let _type = Type(rawValue: rawType) {
-          type = _type;
-        }
-      }
-    }
-  }
-  var plainTextBody: String = "";
-  dynamic var body: String {
+  public var url: String = "";
+  public var httpAuth: HttpAuth = HttpAuth(username: "", password: "");
+  public dynamic var headers: [KVPair] = [KVPair]();
+  public var type: Type = Type.PlainText
+  public dynamic var body: String {
     get {
         return plainTextBody;
     }
@@ -48,11 +34,12 @@ public class Request: NSObject{
       plainTextBody = bodyString;
     }
   }
-  var dataBody: NSData?
-  var gzip: Bool = false;
-  var timeout: Double = 0;
-  var followRedirect: FollowRedirect =  FollowRedirect.Get;
-  var maxRedirects: Int = 10;
-  var proxy: String = "";
-  var interface: String = "";
+  public var dataBody: NSData?
+  public var plainTextBody: String = "";
+  public var gzip: Bool = false;
+  public var timeout: Double = 0;
+  public var followRedirect: FollowRedirect =  FollowRedirect.Get;
+  public var maxRedirects: Int = 10;
+  public var proxy: String = "";
+  public var interface: String = "";
 }
