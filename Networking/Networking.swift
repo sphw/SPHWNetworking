@@ -238,7 +238,7 @@ public enum FollowRedirect {
 public class HttpAuth: NSObject {
   var username: String = "";
   var password: String = "";
-  init(username: String, password: String){
+  public init(username: String, password: String){
     self.username = username;
     self.password = password;
   }
@@ -249,7 +249,7 @@ public enum Method: String {
 public class KVPair: NSObject {
   var key: String = "";
   var value: String = ""
-  init(key: String, value: String){
+  public init(key: String, value: String){
     self.key = key
     self.value = value
   }
