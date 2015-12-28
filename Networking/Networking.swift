@@ -25,9 +25,9 @@ public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
   var redirectCount: Int = 0;
   var completed: Bool = false;
 //MARK; - Setup Functions -
-  init(request: Request, cookieStore: CookieJar, completionCB: (Response, CookieJar) -> (), progressCB: (progress: Int) -> ()) throws{
+  public init(request: Request, cookieStore: CookieJar,  progressCB: (progress: Int) -> () = {progress in }, completion: (Response, CookieJar) -> ()) throws{
     self.url = NSURL(string: request.url)!;
-    self.completionCB = completionCB;
+    self.completionCB = completion;
     self.progressCB = progressCB;
     self.request = request;
     self.cookieStore = cookieStore;
