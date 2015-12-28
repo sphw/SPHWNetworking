@@ -18,10 +18,17 @@ public class Response : NSObject {
    - Default: PlainText
    **/
   public var type: Type = .PlainText
+  /** The URL for the response
+   - Default: The URL of the request
+   **/
   public var url: String = "";
+  /** The size in bytes of the response **/
   public var size: Int = 0;
+  /** The date that the response object was created **/
   public var date: NSDate = NSDate();
+  /** The length of time it took to complete the request **/
   public var time: Float32 = 0.0;
+  /** The HTTP status code **/
   public var statusCode: Int! = 0 {
     didSet {
       if(statusCode != 0){
@@ -31,8 +38,12 @@ public class Response : NSObject {
       }
     }
   };
+  /** A string version of the status code with a default value of blank instead of 0 **/
   public var statusString: String = "";
+  /** A boolean value for whether or not the request has succeded true means a statusCode of below 400 **/
   public var success: Bool = false;
+  /** The number of redirects the response follow **/
   public var redirectCount: Int = 0;
+  /** The headers **/
   public var headers: Array<KVPair> = [];
 }
