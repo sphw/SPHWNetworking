@@ -3,7 +3,7 @@ SWNetworking is an easy to use Swift HTTP client built with CocoaAsyncSockets. I
 
 ### Install
 ---
-SPHWNetworking can be installed easily via cocoa pods
+SPHWNetworking can be installed easily via Cocoa Pods
 
 ```ruby
 pod 'SPHWNetworking'
@@ -31,11 +31,12 @@ request.body = "FOO"
 Last but not least you setup your networking request.
 
 ```swift
-let netRequest = NetworkingRequest(request, jar: CookieJar(), completionCB: {
-response, jar in
-// Do stuff with the resulting jar and response
-}, progressCB: { progress in
+let netRequest = NetworkingRequest(request, jar: CookieJar(), progressCB: {
+progress in
 // Do stuff with the progress
-})
+}) { response, body in
+// Do stuff with the resulting jar and response
+}
+netRequest.run()
 ```
 [1]:	http://intercept.saschawise.com
