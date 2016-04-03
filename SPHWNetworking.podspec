@@ -1,3 +1,4 @@
+# coding: utf-8
 #
 #  Be sure to run `pod spec lint Networking.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
@@ -134,5 +135,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency "CocoaAsyncSocket"
+  s.dependency "GZIP"
 
 end
