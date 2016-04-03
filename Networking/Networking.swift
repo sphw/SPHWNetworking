@@ -5,6 +5,7 @@
 
 import Foundation
 import CocoaAsyncSocket
+import GZIP
 enum NetworkingError: ErrorType {
   case InvalidUrl
 }
@@ -193,7 +194,7 @@ public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
     response!.url = self.url.absoluteString;
 //    response!.size = (self.response!.body.dataUsingEncoding(NSASCIIStringEncoding)?.length)!;
     if let data = CFHTTPMessageCopyBody(self.responseMessage!)  {
-      response!.dataBody = NSMutableData(data: data.takeRetainedValue() as NSData)
+        response!.dataBody = NSMutableData(data: data.takeRetainedValue() as NSData)
     }
     response!.statusCode = statusCode;
     response!.redirectCount = redirectCount;
@@ -203,6 +204,9 @@ public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
       for rawKey in headerCFDict.allKeys {
         let key = rawKey as! String as String!
         let value = (headerCFDict.valueForKey(key) as! String);
+        if(key == "Content-Encoding" && value == "gzip"){
+            response!.dataBody = NSMutableData(data: response!.dataBody.gunzippedData()!)
+        }
         response!.headers.append(KVPair(key: key, value: value));
         switch (key.lowercaseString){
         case "content-type":
