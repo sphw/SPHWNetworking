@@ -1,3 +1,4 @@
+![Build Status](http://ci.saschawise.com/plugins/servlet/wittified/build-status/PUB-SPHWNET)
 ## SPHWNetworking 
 SWNetworking is an easy to use Swift HTTP client built with CocoaAsyncSockets. It is in the alpha stages and as such the API is going to change. It was built for [Intercept][1] and RESTer
 
