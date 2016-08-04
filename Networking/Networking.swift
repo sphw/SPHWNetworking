@@ -173,7 +173,7 @@ public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
   }
 //MARK: - Handlers
   func requestFinished() {
-    NSLog("Finished")
+    print("Finished: \(self.url)")
     let statusCode = CFHTTPMessageGetResponseStatusCode(self.responseMessage!)
     if  statusCode == 301 || statusCode == 302 || statusCode == 307 || statusCode == 308 {
       if let location = CFHTTPMessageCopyHeaderFieldValue(self.responseMessage!, "Location")?.takeRetainedValue() {
@@ -205,9 +205,6 @@ public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
       for rawKey in headerCFDict.allKeys {
         let key = rawKey as! String as String!
         let value = (headerCFDict.valueForKey(key) as! String)
-        if(key == "Content-Encoding" && value == "gzip") {
-            response!.dataBody = NSMutableData(data: response!.dataBody.gunzippedData()!)
-        }
         response!.headers.append(KVPair(key: key, value: value))
         switch (key.lowercaseString) {
         case "content-type":
