@@ -124,6 +124,7 @@ public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
           if let encoding = CFHTTPMessageCopyHeaderFieldValue(self.responseMessage!, "Transfer-Encoding") {
             if encoding.takeRetainedValue() == "chunked" {
               socket?.readDataToData("\r\n".dataUsingEncoding(NSASCIIStringEncoding), withTimeout: -1, tag: 3)
+              NSLog("reading forward chunked")
             }
           } else if let length = (CFHTTPMessageCopyHeaderFieldValue(self.responseMessage!, "Content-Length")) {
             let intLength = UInt(length.takeRetainedValue() as String)
@@ -131,6 +132,9 @@ public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
               self.requestFinished()
             }
             socket!.readDataToLength(intLength!, withTimeout: -1, tag: 2)
+            NSLog("reading forward length")
+          } else {
+            self.requestFinished()
           }
           self.progressCB(progress: 35)
         }
