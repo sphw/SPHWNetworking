@@ -93,13 +93,13 @@ public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
     } else {
       try! socket!.connectToHost(host, onPort: UInt16(port), viaInterface: request.interface, withTimeout: -1)
     }
+    if(self.url.scheme == "https") {
+        self.socket!.startTLS([ String(kCFStreamSSLPeerName): host!])
+    }
   }
 //MARK: - Socket Delegates -
   public func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16) {
-    NSLog("Connected to Host")
-    if(self.url.scheme == "https") {
-      self.socket!.startTLS(nil)
-    }
+    print("Connected to URL: \(self.url)")
     if let data = CFHTTPMessageCopySerializedMessage(self.requestMessage!) {
       let rData = data.takeRetainedValue()
       var string = String(data: rData, encoding: NSUTF8StringEncoding)
