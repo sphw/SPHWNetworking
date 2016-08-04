@@ -71,7 +71,8 @@ public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
       NSLog("\(key): \(value)")
       CFHTTPMessageSetHeaderFieldValue(self.requestMessage!, key, value)
     }
-    self.socket = GCDAsyncSocket(delegate: self, delegateQueue:dispatch_get_main_queue())
+    let queue = dispatch_queue_create("com.networking.queue\(arc4random_uniform(1000))", nil)
+    self.socket = GCDAsyncSocket(delegate: self, delegateQueue: queue, socketQueue: queue)
     var host = url.host
     var port: Int
     if(self.url.scheme == "https") {
