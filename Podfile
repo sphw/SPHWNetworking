@@ -3,7 +3,7 @@
 # Uncomment this line if you're using Swift
 use_frameworks!
 target 'Networking' do
-    pod 'CocoaAsyncSocket'
+    pod 'CocoaAsyncSocket', '7.4.3'
     pod 'GZIP'
 end
 
