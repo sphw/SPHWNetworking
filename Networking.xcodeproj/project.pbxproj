@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9391D5BF9781C0682405E5B6 /* Pods_Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5DAE82EDB0A229B2D53796 /* Pods_Networking.framework */; };
+		AA49CEC7B2533F8991687110 /* Pods_NetworkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4AEDAA78576C2CD26BC1506 /* Pods_NetworkingTests.framework */; };
 		FC24A2F81C2F18D6006BE8AC /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = FC24A2F71C2F18D6006BE8AC /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC24A2FF1C2F18D6006BE8AC /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC24A2F41C2F18D6006BE8AC /* Networking.framework */; };
 		FC24A3041C2F18D6006BE8AC /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24A3031C2F18D6006BE8AC /* NetworkingTests.swift */; };
@@ -27,6 +29,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A5DAE82EDB0A229B2D53796 /* Pods_Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BF32B254CC30780C7087073 /* Pods-Networking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking.release.xcconfig"; path = "Pods/Target Support Files/Pods-Networking/Pods-Networking.release.xcconfig"; sourceTree = "<group>"; };
+		842387E5AE04A2D8CA65B7F6 /* Pods-NetworkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B114ED840497CF5E2FDC7CFC /* Pods-NetworkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests.release.xcconfig"; sourceTree = "<group>"; };
+		C4AEDAA78576C2CD26BC1506 /* Pods_NetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBEE9FCC2BF21F954207016E /* Pods-Networking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Networking/Pods-Networking.debug.xcconfig"; sourceTree = "<group>"; };
 		FC24A2F41C2F18D6006BE8AC /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC24A2F71C2F18D6006BE8AC /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		FC24A2F91C2F18D6006BE8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9391D5BF9781C0682405E5B6 /* Pods_Networking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +61,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC24A2FF1C2F18D6006BE8AC /* Networking.framework in Frameworks */,
+				AA49CEC7B2533F8991687110 /* Pods_NetworkingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F26CB308C6CE46EAEF3DA6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A5DAE82EDB0A229B2D53796 /* Pods_Networking.framework */,
+				C4AEDAA78576C2CD26BC1506 /* Pods_NetworkingTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7F983B804D4A1792CEF9268 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CBEE9FCC2BF21F954207016E /* Pods-Networking.debug.xcconfig */,
+				7BF32B254CC30780C7087073 /* Pods-Networking.release.xcconfig */,
+				842387E5AE04A2D8CA65B7F6 /* Pods-NetworkingTests.debug.xcconfig */,
+				B114ED840497CF5E2FDC7CFC /* Pods-NetworkingTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FC24A2EA1C2F18D6006BE8AC = {
 			isa = PBXGroup;
 			children = (
 				FC24A2F61C2F18D6006BE8AC /* Networking */,
 				FC24A3021C2F18D6006BE8AC /* NetworkingTests */,
 				FC24A2F51C2F18D6006BE8AC /* Products */,
+				A7F983B804D4A1792CEF9268 /* Pods */,
+				2F26CB308C6CE46EAEF3DA6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,10 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC24A3081C2F18D6006BE8AC /* Build configuration list for PBXNativeTarget "Networking" */;
 			buildPhases = (
+				70245BDE25C22CA2AC6D1BB9 /* [CP] Check Pods Manifest.lock */,
 				FC24A2EF1C2F18D6006BE8AC /* Sources */,
 				FC24A2F01C2F18D6006BE8AC /* Frameworks */,
 				FC24A2F11C2F18D6006BE8AC /* Headers */,
 				FC24A2F21C2F18D6006BE8AC /* Resources */,
+				B9F423746B39E41B26C5AA72 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,9 +168,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC24A30B1C2F18D6006BE8AC /* Build configuration list for PBXNativeTarget "NetworkingTests" */;
 			buildPhases = (
+				94FDC6AB11D783711CEC7DEC /* [CP] Check Pods Manifest.lock */,
 				FC24A2FA1C2F18D6006BE8AC /* Sources */,
 				FC24A2FB1C2F18D6006BE8AC /* Frameworks */,
 				FC24A2FC1C2F18D6006BE8AC /* Resources */,
+				1233845B9E0EC386537B5D75 /* [CP] Embed Pods Frameworks */,
+				2931EA47C4BF5E6D2CF72B06 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,6 +237,84 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1233845B9E0EC386537B5D75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2931EA47C4BF5E6D2CF72B06 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70245BDE25C22CA2AC6D1BB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		94FDC6AB11D783711CEC7DEC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B9F423746B39E41B26C5AA72 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Networking/Pods-Networking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC24A2EF1C2F18D6006BE8AC /* Sources */ = {
@@ -320,6 +435,7 @@
 		};
 		FC24A3091C2F18D6006BE8AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBEE9FCC2BF21F954207016E /* Pods-Networking.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -340,6 +456,7 @@
 		};
 		FC24A30A1C2F18D6006BE8AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BF32B254CC30780C7087073 /* Pods-Networking.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -359,6 +476,7 @@
 		};
 		FC24A30C1C2F18D6006BE8AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 842387E5AE04A2D8CA65B7F6 /* Pods-NetworkingTests.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = NetworkingTests/Info.plist;
@@ -370,6 +488,7 @@
 		};
 		FC24A30D1C2F18D6006BE8AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B114ED840497CF5E2FDC7CFC /* Pods-NetworkingTests.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = NetworkingTests/Info.plist;
@@ -398,6 +517,7 @@
 				FC24A30A1C2F18D6006BE8AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC24A30B1C2F18D6006BE8AC /* Build configuration list for PBXNativeTarget "NetworkingTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +526,7 @@
 				FC24A30D1C2F18D6006BE8AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
