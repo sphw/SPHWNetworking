@@ -195,7 +195,7 @@ public class NetworkingRequest: NSObject, GCDAsyncSocketDelegate {
   func responseGenerator() {
     let statusCode = CFHTTPMessageGetResponseStatusCode(self.responseMessage!)
     self.completed = true
-    response!.url = self.url.absoluteString
+    response!.url = self.url.absoluteString!
 //    response!.size = (self.response!.body.dataUsingEncoding(NSASCIIStringEncoding)?.length)!;
     response!.statusCode = statusCode
     response!.redirectCount = redirectCount
