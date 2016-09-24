@@ -7,14 +7,14 @@
 //
 
 import Cocoa
-public class CookieJar: NSObject {
-  public var cookies: Array<NSHTTPCookie> = [];
-  public func addCookies(newCookies: [NSHTTPCookie]){
+open class CookieJar: NSObject {
+  open var cookies: Array<HTTPCookie> = [];
+  open func addCookies(_ newCookies: [HTTPCookie]){
     for newCookie in newCookies {
       var added = false
       for  cookie in self.cookies {
         if(cookie.name == newCookie.name){
-          self.cookies[self.cookies.indexOf(cookie)!] = newCookie;
+          self.cookies[self.cookies.index(of: cookie)!] = newCookie;
           added = true
         }
       }
@@ -24,18 +24,18 @@ public class CookieJar: NSObject {
     }
     NSLog("added");
   }
-  public func validCookies(url: NSURL) -> [NSHTTPCookie]{
+  open func validCookies(_ url: URL) -> [HTTPCookie]{
      let ary = self.cookies.filter({ cookie in
       var validity = true
       if cookie.domain.characters.first == "." {
-        validity = (url.host?.containsString(cookie.domain))!
+        validity = (url.host?.contains(cookie.domain))!
       }else{
         validity =  (cookie.domain == url.host)
       }
       NSLog(cookie.path);
       if(cookie.path != "/"){
-        for (i, pathComponent) in cookie.path.componentsSeparatedByString("/").enumerate(){
-          let urlComponent = url.pathComponents![i];
+        for (i, pathComponent) in cookie.path.components(separatedBy: "/").enumerated(){
+          let urlComponent = url.pathComponents[i];
           if(validity){
             var tP = pathComponent
             if(pathComponent == ""){
